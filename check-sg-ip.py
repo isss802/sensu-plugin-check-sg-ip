@@ -10,7 +10,7 @@ def main():
         conn = boto.ec2.connect_to_region(args.region,aws_access_key_id=args.aws_access_key_id,aws_secret_access_key=args.aws_secret_access_key,profile_name=args.profile)
     except:
         print "UNKNOWN: Unable to connect to reqion %s" % args.region
-        sys.exit(2)
+        sys.exit(3)
 
     try:    
         groups=conn.get_all_security_groups(group_ids=args.sgids)
@@ -22,12 +22,11 @@ def main():
     for rule in group.rules:
         for ip in rule.grants:
             if ip.cidr_ip == args.checkip:
-                print ip.cidr_ip
-                print "NG"
-                sys.exit(1)
+                print "CRITICAL:Match IP %s" % ip.cidr_ip
+                sys.exit(2)
             else:
                 print ip.cidr_ip
-    print "OK"
+    print "Check OK"
     sys.exit(0)
 
 if __name__ == "__main__":

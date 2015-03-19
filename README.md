@@ -33,6 +33,11 @@ You can omit `--aws-access-key-id`, `--aws-secret-access-key`, `--profile` and `
 # Example
 
 ```
+# ./check-sg-ip.py -r ap-northeast-1 -g sg-xxxxxxxx -i 123.123.123.123/32
+219.117.233.241/32
+10.100.0.0/16
+None
+OK
 ```
 
 # Changelog
