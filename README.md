@@ -10,7 +10,7 @@ Put `check-sg-ip.py` into `/etc/sensu/plugins`.
 
 ```
 usage: check-sg-ip.py [-h] [-a AWS_ACCESS_KEY_ID] [-s AWS_SECRET_ACCESS_KEY]
-                      -r REGION -g SGIDS -i CHECKIP
+                      [--profile PROFILE] -r REGION -g SGIDS -i CHECKIP
 
 Check IP of security group
 
@@ -20,6 +20,7 @@ optional arguments:
                         AWS Access Key
   -s AWS_SECRET_ACCESS_KEY, --aws-secret-access-key AWS_SECRET_ACCESS_KEY
                         AWS Secret Access Key
+  --profile PROFILE     Profile name of AWS shared credential file entry.
   -r REGION, --region REGION
                         AWS Region
   -g SGIDS, --sgid SGIDS
