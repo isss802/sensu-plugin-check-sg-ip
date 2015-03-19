@@ -34,9 +34,7 @@ You can omit `--aws-access-key-id`, `--aws-secret-access-key`, `--profile` and `
 
 ```
 # ./check-sg-ip.py -r ap-northeast-1 -g sg-xxxxxxxx -i 123.123.123.123/32
-111.222.111.222/32
 10.100.0.0/16
-None
 Check OK
 
 #./check-sg-ip.py -r ap-northeast-1 -g sg-xxxxxxxx -i 10.100.0.0/16
